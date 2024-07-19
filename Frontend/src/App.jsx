@@ -11,13 +11,34 @@ const App = () => {
       
       <div>
         <Navbar />
-        <Routes>
+        {/* <Routes>
           <Route path="/Login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-        </Routes>
+        </Routes> */}
         <Footer />
       </div>
     </Router>
+
+// import Categories from './categories';
+
+// const App = () => {
+//   return (
+    
+//     // <Router>
+//     //   <div>
+//     //     <Routes>
+//     //       <Route path="/" element={<Login />} />
+//     //       <Route path="/register" element={<Register />} />
+//     //       {/* <Route path="/categories" element={<Categories />}/> */}
+//     //     </Routes>
+//     //   </div>
+//     // </Router>
+//     <div>
+//       <button className='categories'>
+//           <Categories />
+//           </button>
+
+//     </div>
   );
 };
 
