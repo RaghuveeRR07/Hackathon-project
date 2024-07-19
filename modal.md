@@ -1,7 +1,16 @@
-import React from 'react';
+<button className="btn" onClick={() => setIsModalOpen(true)}>Sign In</button>
+          {isModalOpen && (
+            <dialog open className="modal modal-bottom sm:modal-middle">
+              <div className="modal-box">
+                <Login />
+                <button className="btn mt-4" onClick={() => setIsModalOpen(false)}>Close</button>
+              </div>
+            </dialog>
+          )}
+          import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Login({ setIsModalOpen, setModalContent }) {
+function Register({ setIsModalOpen, setModalContent }) {
   return (
     <section className="rounded-md bg-black/70 p-2">
       <div className="flex items-center justify-center bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
@@ -42,23 +51,19 @@ function Login({ setIsModalOpen, setModalContent }) {
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center mr-4">
+            <div>
+              <label htmlFor="confirm-password" className="block text-sm font-medium text-gray-700">
+                Confirm Password
+              </label>
+              <div className="mt-1">
                 <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  id="confirm-password"
+                  name="confirm-password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                  Remember me
-                </label>
-              </div>
-
-              <div className="text-sm">
-                <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Forgot your password?
-                </a>
               </div>
             </div>
 
@@ -67,7 +72,7 @@ function Login({ setIsModalOpen, setModalContent }) {
                 type="submit"
                 className="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
-                Sign in
+                Sign up
               </button>
             </div>
           </form>
@@ -145,12 +150,12 @@ function Login({ setIsModalOpen, setModalContent }) {
           </div>
 
           <p className="mt-2 text-center text-sm text-gray-600">
-            Don&apos;t have an account?{' '}
+            Already have an account?{' '}
             <Link 
-              onClick={() => setModalContent('register')}
+              onClick={() => setModalContent('login')}
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
-              Sign up
+              Sign in
             </Link>
           </p>
         </div>
@@ -159,4 +164,4 @@ function Login({ setIsModalOpen, setModalContent }) {
   );
 }
 
-export default Login;
+export default Register;

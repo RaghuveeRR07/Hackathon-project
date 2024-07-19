@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
-const Register = () => {
+const Register = ({setIsModalOpen,setModalContent}) => {
   return (
     <section className="rounded-md bg-black/80 p-2">
       <div className="flex items-center justify-center bg-white px-4 py-10 sm:px-6 sm:py-16 lg:px-8">
@@ -41,8 +41,7 @@ const Register = () => {
               Sign In
             </a> */}
             <Link
-              to="/"
-              className="font-medium text-black transition-all duration-200 hover:underline"
+onClick={() => setModalContent('login')}              className="font-medium text-black transition-all duration-200 hover:underline"
             >
               Sign In
             </Link>
